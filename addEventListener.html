@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+
+        window.onload = function () {
+            var eventBtn1 = document.getElementById("eventBtn1");
+            var eventBtn2 = document.getElementById("eventBtn2");
+    
+            eventBtn1.addEventListener("click", myBtnClickHandler);
+            eventBtn2.addEventListener("click", function() {
+                console.log("eventBtn2가 클릭되었습니다.");
+            });
+        }
+    
+        function myBtnClickHandler() {
+            console.log("eventBtn1가 클릭되었습니다.");
+        }
+    </script>
+</head>
+<body>
+    <button id="eventBtn1">이벤트 버튼1</button>
+    <button id="eventBtn2">이벤트 버튼2</button>
+</body>
+</html>

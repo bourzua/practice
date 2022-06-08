@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    10+"20"; <p id="ex1">1</p><br>
+    "10"-20; <p id="ex2">1</p><br>
+    "10"+false; <p id="ex3">1</p><br>
+    10+true; <p id="ex4">1</p>
+</body>
+<script>
+    function ex1(a, b) {return (a + b)};
+    function ex2(a, b) {return (a - b)};
+    document.getElementById("ex1").innerHTML = "" + ex1(10, "20");
+    document.getElementById("ex2").innerHTML = "" + ex2("10", 20);
+    document.getElementById("ex3").innerHTML = "" + ex1("10", false);
+    document.getElementById("ex4").innerHTML = "" + ex1(10, true);
+</script>
+</html>

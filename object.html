@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    // // 객체
+    // var phone = {name : "G6", co : "LG"};
+    // alert("이름 = " + phone.name + ", 제조사 = " + phone.co);
+
+    // var phone = {name : "G6", co : function(company){alert(this.name + "은 " + company + "에서 개발함");}};
+    // phone.co("LG");
+
+    // // 배열
+    // var info = {
+    //     name : "송형철",
+    //     age : 46,
+    //     phone : "010.5561.7528",
+    //     address : "서울시 서대문구 냉천동"
+    // };
+    // var output = "";
+    // for (var key in info) {
+    //     output += "-" + key + " : " + info[key] + "\n";
+    // }
+    // alert(output);
+
+    // var info = {
+    //     name : "송형철",
+    //     age : 46,
+    //     phone : "010.5561.7528",
+    //     address : "서울시 서대문구 냉천동"
+    // };
+    // var output = "";
+    // for (var key in info) {
+    //     output += "name in info : " + ('nm' in info);
+    //     output += ", phone in info : " + ('phone' in info) + "\n";
+    // }
+    // alert(output)
+
+    // with
+    var info = {
+        name : "송형철",
+        age : 46,
+        phone : "010.5561.7528",
+        address : "서울시 서대문구 냉천동"
+    };
+    var output = "";
+    with (info) {
+        output += "name : " + name;
+        output += ", phone : " + phone + "\n";
+    }
+    alert(output);
+
+
+</script>
+</html>
