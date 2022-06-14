@@ -6,53 +6,89 @@
 <body>
 </body>
 <script>
-    // // 객체
-    // var phone = {name : "G6", co : "LG"};
-    // alert("이름 = " + phone.name + ", 제조사 = " + phone.co);
-
-    // var phone = {name : "G6", co : function(company){alert(this.name + "은 " + company + "에서 개발함");}};
-    // phone.co("LG");
-
-    // // 배열
-    // var info = {
-    //     name : "송형철",
-    //     age : 46,
-    //     phone : "010.5561.7528",
-    //     address : "서울시 서대문구 냉천동"
-    // };
-    // var output = "";
-    // for (var key in info) {
-    //     output += "-" + key + " : " + info[key] + "\n";
-    // }
-    // alert(output);
-
-    // var info = {
-    //     name : "송형철",
-    //     age : 46,
-    //     phone : "010.5561.7528",
-    //     address : "서울시 서대문구 냉천동"
-    // };
-    // var output = "";
-    // for (var key in info) {
-    //     output += "name in info : " + ('nm' in info);
-    //     output += ", phone in info : " + ('phone' in info) + "\n";
-    // }
-    // alert(output)
-
-    // with
-    var info = {
-        name : "송형철",
-        age : 46,
-        phone : "010.5561.7528",
-        address : "서울시 서대문구 냉천동"
-    };
-    var output = "";
-    with (info) {
-        output += "name : " + name;
-        output += ", phone : " + phone + "\n";
+    var person = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 50,
+        eyeColor: "blue"
     }
-    alert(output);
+    
+    console.log(person.age);
+    console.log(person["age"])
+    console.log("----------")
+
+    // 원시 타입은 immutable
+    var y = 1;
+    var x = y;
+
+    x = 3;
+
+    console.log(y);
+    console.log(x);
+    console.log("----------")
+
+    // 객체는 mutable
+    var person1 = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 50,
+        eyeColor: "blue"
+    }
+
+    var x1 = person1;
+    x1.age = 10;
+
+    console.log(person1);
+    console.log("----------")
+
+    var person2 = {
+        firstName : "John",
+        lastName : "Doe",
+        fullName : function() {
+            return this.firstName + " " + this.lastName;
+        }
+    }
+
+    console.log(person2.fullName());
+    console.log(person2.fullName);
+    console.log("----------")
+
+    // 생성자
+    function person3(first, last, age, eyecolor) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eyecolor;
+    }
+
+    var myFather = new person3("John", "Doe", 50, "blue");
+    var myMother = new person3("Sally", "Rally", 48, "green");
+
+    console.log(myFather);
+    console.log(myMother);
+    console.log("----------");
+
+    //instanceof 연산자
+    function person4(first, last, age) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+    }
+
+    console.log(myFather instanceof person4);
+    console.log("----------");
 
 
+    // var abc = new Boolean(null);
+    // if (abc) {
+    //     alert("hi");
+    // }
+
+    var m = new String("korea");
+    var n = "korea";
+
+    console.log(m == n);
+    console.log(m === n);
+    console.log(typeof(m), typeof(n));
 </script>
 </html>
