@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // 묵시적인 arguments라는 인수의 배열이 자동으로 전달됨
+  function total() {
+    var s = 0;
+    if (typeof(arguments[0]) == "string") {
+      s = "";
+    }
+    for (var i = 0; i < arguments.length; i++) {
+      s += arguments[i];
+    }
+    return s;
+  }
+  document.write(total(1, 3, 5) + "<br>");
+  document.write(total("Hello", "world") + "<br>");
+  document.write("<hr>")
+
+  /*
+  원시형 타입(Numbers, Strings, Booleans)은 값으로 전달(call by value),
+  객체는 참조로 전달(call by reference)됨
+  */
+  function byValue(a) {
+    a = 9999;
+  }
+  function byRef(a) {
+    a[0] = 9999;
+  }
+  var int = 1000;
+  var ar = [1000, 2000, 3000];
+  byValue(int);
+  document.write(int + "<br>");
+  byRef(ar);
+  document.write(ar[0]);
+  document.write("<hr>")
+</script>
+</html>
