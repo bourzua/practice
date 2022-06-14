@@ -42,5 +42,31 @@
   byRef(ar);
   document.write(ar[0]);
   document.write("<hr>")
+
+  // 클로저
+  function makeFunc() {
+    var name = "Mozilla";
+    function displayName() {
+      alert(name);
+    }
+    return displayName;
+  }
+  
+  //myFunc 변수에 displayName을 리턴함
+  //유효범위의 어휘적 환경을 유지
+  var myFunc = makeFunc();
+
+  // 리턴된 displayName 함수를 실행(name 변수에 접근)
+  myFunc();
+
+  //동적 함수
+  var body;
+  if (confirm("더할래, 곱할래") == true) {
+    body = "return a + b;";
+  } else {
+    body = "return a * b;";
+  }
+  var add = new Function("a", "b", body);
+  document.write("result = " + add(2, 3) + "<br>");
 </script>
 </html>
